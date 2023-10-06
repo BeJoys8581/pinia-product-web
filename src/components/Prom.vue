@@ -23,22 +23,22 @@ const tea = computed(() => {
  <!-- Coffee Products -->
  <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
     <div class="my-3 p-3">
-    <RouterLink to="/" class="my-button">Back</RouterLink>
-    <h2 class="display-5">{{ tea.name }}</h2>
-      <p class="lead">{{ tea.type }}</p>
+    <RouterLink to="/" class="my-button"> ← Back </RouterLink>
+    <h2 class="display-5"> {{ tea.name }} 🍶</h2>
+      <p class="lead">🍃 {{ tea.type }} 🌿</p>
     </div>
    <div class="bg shadow-sm mx-auto">
   <img class="img2" :src="tea.img" width="200" height="300" />
 </div>
 <br>
-    <h3>{{ tea.price }} Bath/cups</h3>
- <br> <h6 style="text-align: left;">{{ tea.detail }}</h6><br> <br>
-<button class="CartBtn" @click="cart_store.add_cart(tea.id, tea.name, tea.price)">
-  <span class="IconContainer"> 
-    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="rgb(17, 17, 17)" class="cart"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg>
-  </span>
-  <p class="text">Add to Cart</p>
+    <h3>{{ tea.price }} Bath/cups 🍵</h3>
+ <br> <h6 style="text-align: center;">{{ tea.detail }}</h6><br> <br>
+ <div>
+<button type="button" class="Cardbtn" @click="cart_store.add_cart(tea.id, tea.name, tea.price)" >
+  <span class="Cardbtn__text">Add Item </span>
+  <span class="Cardbtn__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
 </button>
+</div>
  <br>
 
  </div> 
@@ -48,9 +48,9 @@ const tea = computed(() => {
 
 <style>
 .bg {
-  width: 43.3%;
+  width: 45%;
   height: 350px;
-  margin-top: -10px;
+  margin-top: -20px;
   border-radius: 100px;
   background-color: #303030;
 }
@@ -58,79 +58,74 @@ const tea = computed(() => {
 .img2 {
   width: 450px;
   height: 350px;
-  margin-top: -10px;
-  margin-left: 30px;
+  margin-top: 0px;
+  margin-left: 10px;
   border-radius: 100px;
 
 }
 
 
 /* cart-button */
-.CartBtn {
-  margin: auto auto;
-  width: 150px;
-  height: 40px;
-  border-radius: 12px;
-  border: none;
-  background-color: rgb(4, 114, 28);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition-duration: .5s;
-  overflow: hidden;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+.Cardbtn {
   position: relative;
-}
-
-.IconContainer {
-  position: absolute;
-  left: -50px;
-  width: 30px;
-  height: 30px;
-  background-color: transparent;
-  border-radius: 50%;
+  width: 160px;
+  height: 40px;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  z-index: 2;
-  transition-duration: .5s;
+  border: 1px solid #34974d;
+  background-color: #3aa856;
+  transition: all 0.3s;
+  margin-left: 510px;
 }
 
-.icon {
-  border-radius: 1px;
+.Cardbtn, .Cardbtn__icon, .Cardbtn__text {
+  transition: all 0.3s;
 }
 
-.text {
-  height: 100%;
-  width: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 15px;
-  color: rgb(255, 255, 255);
-  z-index: 1;
-  transition-duration: .5s;
-  font-size: 1.04em;
+.Cardbtn .Cardbtn__text {
+  transform: translateX(30px);
+  color: #fff;
   font-weight: 600;
 }
 
-.CartBtn:hover .IconContainer {
-  transform: translateX(58px);
-  border-radius: 40px;
-  transition-duration: .5s;
+.Cardbtn .Cardbtn__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 45px;
+  background-color: #34974d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.CartBtn:hover .text {
-  transform: translate(10px,0px);
-  transition-duration: .5s;
+.Cardbtn .svg {
+  width: 30px;
+  stroke: #fff;
 }
 
-.CartBtn:active {
-  transform: scale(0.95);
-  transition-duration: .5s;
+.Cardbtn:hover {
+  background: #34974d;
 }
+
+.Cardbtn:hover .Cardbtn__text {
+  color: transparent;
+}
+
+.Cardbtn:hover .Cardbtn__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.Cardbtn:active .Cardbtn__icon {
+  background-color: #2e8644;
+}
+
+.Cardbtn:active {
+  border: 1px solid #2e8644;
+}
+
 
 /* back-button */
 

@@ -50,7 +50,7 @@ export const productStore = defineStore('product', () => {
     },{ 
     id: 9, name: 'Hot Hojicha',price:299,
     img: "https://m.media-amazon.com/images/I/71VdA1acPcL.jpg",
-    type: "Flowering Tea (Blooming Tea)",
+    type: "Flowering Tea",
     detail:'Indulge in a calming and aromatic blend of lavender and zesty lemon. This herbal infusion combines the soothing properties of lavender with the citrusy brightness of lemon, creating a serene and uplifting tea that can be enjoyed any time of the day.'
     },{ 
     id: 10, name: 'Fruit Infusion',price:299,

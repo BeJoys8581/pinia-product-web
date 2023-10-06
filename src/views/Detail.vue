@@ -14,9 +14,9 @@ const list = computed(() => product.productList)
     v-for="(tea, index) in list"
     :key="index"
   >
-    <div class="my-3 p-3">
-      <h2 class="display-5" style="margin-top: 70px;">{{ tea.name }}</h2>
-      <p class="lead">{{ tea.type }} </p>
+    <div class="my-1 p-1">
+      <h2 class="display-5" style="margin-top: -20px;">{{ tea.name }}</h2>
+      <p class="lead">🌿 {{ tea.type }} 🍃 </p>
     </div>
    
     <div
@@ -28,7 +28,7 @@ const list = computed(() => product.productList)
         border-radius: 21px 21px 0 0;
       "
     >
-      <img :src="tea.img" width="450" height="300" style="margin-top: 10px;" />
+      <img class="img1" :src="tea.img" width="450" height="300" style="margin-top: 10px;" />
     </div>
     <div class="d-flex gap-1 justify-content-center ">
       <RouterLink
@@ -36,7 +36,7 @@ const list = computed(() => product.productList)
         class="button"
         type="button"
       >
-        Tea Details 
+        🍵 Tea Details 
       </RouterLink>
     </div>
   </div>
@@ -48,8 +48,8 @@ const list = computed(() => product.productList)
 
 <style>
 
-img{
-  width: 100%;
+.img1{
+  width: 150px ;
   height: 150px;
   border-radius: 10%;
   display: flex;
@@ -74,7 +74,7 @@ img{
  transition: color .5s;
  z-index: 1;
  font-size: 17px;
- border-radius: 6px;
+ border-radius: 50px;
  font-weight: 500;
  color: var(--color);
 }
