@@ -35,7 +35,7 @@ const listOrder = computed(() => cart_store.cart_show_order)
           </tr>
       </tbody>
   </table> <br>
-  <h4 style="text-align: center;">Thank you & Have a good experience </h4>
+  <h4 style="text-align: center;">Thank you & Have a good experience 🙏 </h4>
   <h1 style="text-align: center;">Total Price {{ cart_store.total }} Baht.</h1>
 </div>
 <div style="margin-bottom: 300px;"></div>
